@@ -1,0 +1,24 @@
+new Float:oldPos[MAX_PLAYERS][3];
+
+
+
+// fresh
+GetPlayerPos(playerid, oldPos[playerid][0], oldPos[playerid][1], oldPos[playerid][2]);
+
+
+
+
+
+
+// OnPlayerStateChange
+   	if(newstate == PLAYER_STATE_DRIVER)
+	{
+	   	if(!IsPlayerInRangeOfPoint(playerid, 15.0, oldPos[playerid][0], oldPos[playerid][1], oldPos[playerid][2]))
+		{
+		    if(!PlayerInfo[playerid][pAdmin])
+		    {
+		    		sendmes(playerid, "Tkven Gaikiket Cheterobis Gamo #002 (teleport hack [vehicle])");
+		   	 	Kick(playerid);
+			}
+		}
+	}
